@@ -5,14 +5,16 @@
         <th>Renk</th>
         <th>Model Yılı</th>
         <th>Günlük Fiyat</th>
+        <th>Kdv'li Günlük Fiyat</th>
         <th>Model</th>
     </tr>
 </thead>
 <tr>
-    <td>{{ carDetails.brandName }}</td>
-    <td>{{ carDetails.colorName }}</td>
-    <td>{{ carDetails.modelYear }}</td>
-    <td>{{ carDetails.dailyPrice }}</td>
-    <td>{{ carDetails.carName }}</td>   
+    <td>{{ carDetail.brandName |uppercase}}</td>
+    <td>{{ carDetail.colorName }}</td>
+    <td>{{ carDetail.modelYear }}</td>
+    <td>{{ carDetail.dailyPrice |currency }}</td>
+    <td>{{ carDetail.dailyPrice | vatAdded:10 | currency }}</td>
+    <td>{{ carDetail.carName }}</td>   
 </tr>
 </table>

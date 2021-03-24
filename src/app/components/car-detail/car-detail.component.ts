@@ -9,8 +9,8 @@ import { CarDetailService } from 'src/app/services/car-detail.service';
   styleUrls: ['./car-detail.component.css'],
 })
 export class CarDetailComponent implements OnInit {
-  carDetails: CarDetail;
-  // currentCarDetail: CarDetail;
+  carDetail: CarDetail;
+
   constructor(
     private carDetailService: CarDetailService,
     private activatedRoute: ActivatedRoute
@@ -26,19 +26,8 @@ export class CarDetailComponent implements OnInit {
 
   getCarDetails(carId: number) {
     this.carDetailService.getCarDetails(carId).subscribe((response) => {
-      this.carDetails = response.data;
+      this.carDetail = response.data;
       console.log(response);
     });
   }
-  // setCurrentCarDetail(carDetail: CarDetail) {
-  //   this.currentCarDetail = carDetail;
-  // }
-
-  // getCurrentCarDetailClass(carDetail: CarDetail) {
-  //   if (carDetail == this.currentCarDetail) {
-  //     return 'list-group-item active';
-  //   } else {
-  //     return 'list-group-item';
-  //   }
-  // }
 }
